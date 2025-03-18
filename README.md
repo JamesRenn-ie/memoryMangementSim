@@ -14,4 +14,5 @@ Deafult - just replaces the last item index in memory with the new item.\
 FIFO - first in first out, replaces the thing that went into memory first with the new item.
 
 ## Drawbacks
-The systems 'program' is entirely random, so doesn't allow for the fact that usually things that are accesses recently are more popular. This will mean it doesn't accurately affect real world usage, but is more of a worst case test.
+~The systems 'program' is entirely random, so doesn't allow for the fact that usually things that are accesses recently are more popular. This will mean it doesn't accurately affect real world usage, but is more of a worst case test.~\
+Generated a better program which has a preference for certain characters to better simulate spatial locaity, however LRU and FIFO don't seem to actually make any difference, so there may be a bug in this implementation.
