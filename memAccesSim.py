@@ -25,15 +25,16 @@ class Memory:
     def __init__(self, size, controlMethod):
         self.size = size
         self.controlMethod = controlMethod
+        self.tracker = []
+
 
     #simulate reading an item from memory, returns true if in memory or false if page fault
     #then adds the items to memory if it was a page fault
     def getItemFromMemory(self, item):
-        print(self.mem)
         if item in self.mem:
             return True
         else:
-            self.__addItemToMemory(item,"default")
+            self.__addItemToMemory(item,self.controlMethod)
             return False
         
     #adding items to memory with the passed control method
@@ -49,18 +50,18 @@ class Memory:
 
         #simulate first in first out
         if method == "fifo":
-            tracker = []
             if len(self.mem) < self.size: #if the memory isn't full, append.
                 self.mem.append(item)
-                tracker.append(item)
+                self.tracker.append(item)
             else:
-                toRemove = tracker.pop
+                toRemove = self.tracker.pop(0)
                 indexToReplace = self.mem.index(toRemove)
                 self.mem[indexToReplace]=item
+                self.tracker.append(item)
 
 
 class computer:
-    def __init__(self, memSize=3, programLength=10, programRange=4, memControlMethod="default"):
+    def __init__(self, memSize=3, programLength=1000, programRange=4, memControlMethod="fifo"):
         self.memory = Memory(memSize,memControlMethod)
         self.program = Program(programLength,programRange)
 
@@ -74,7 +75,7 @@ class computer:
         print(f"You used the '{self.memory.controlMethod}' method to control your memory")
 
 def main():
-    myPC = computer(programLength=1000, programRange=25, memControlMethod="fifo")
+    myPC = computer()
     myPC
     myPC.run()
 
