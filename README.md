@@ -11,7 +11,7 @@ This will simulate a 'program' which is a series of random characters form the a
 
 ## Currently implemented schemes:
 Deafult - just replaces the last item index in memory with the new item.\
-FIFO - first in first out, replaces the thing that went into memory first with the new item.
+FIFO - first in first out, replaces the thing that went into memory first with the new item.\
 LRU - Least recently used, removes the thing which was used least recently
 
 ## Drawbacks
