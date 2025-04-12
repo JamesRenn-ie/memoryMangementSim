@@ -3,11 +3,16 @@ A simple command line simulator for basic memory mangement methods, to see which
 
 
 running the file by deafult will run with parameters:
-self, memSize=3, programLength=1000, programRange=4, memControlMethod="fifo"
+memSize=3, programLength=1000, programRange=4, memControlMethod="fifo"
 
 memSize is how many pages are in memory, program length is how long the list of characters is, program range is the range of differente characters that can exist (eg a-z is 25) mem control method is the method you use to control memory
 
 This will simulate a 'program' which is a series of random characters form the alphabet, and fetching them from memory. If they don't appear in memory this is a page fault, and they will be added to memory using the specified scheme. It will tell you afterwards how many page faults there were for the scheme.
+
+## To run this yourself
+Download the file or clone the repository, make sure you have python installed, and do ```python memAccesSim.py```\
+You can change the parameters memSize, programLength, programRange and memControlMethod (the control method can be one of the ones implemented below)
+
 
 ## Currently implemented schemes:
 Deafult - just replaces the last item index in memory with the new item.\
