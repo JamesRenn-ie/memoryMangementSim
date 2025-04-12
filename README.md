@@ -1,5 +1,5 @@
 # memoryMangementSim
-A simulator for basic memory mangement methods, to see which one is most efficient. Coded in object orientated python.
+A simple command line simulator for basic memory mangement methods, to see which one is most efficient. Coded in object orientated python. This was created to practice my understanding of these methods for the Computer systems B course at University Of Bristol.
 
 
 running the file by deafult will run with parameters:
